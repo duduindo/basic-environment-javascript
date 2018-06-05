@@ -1,0 +1,43 @@
+{
+  "name": "basic-environment-javascript",
+  "version": "0.0.1",
+  "description": "Basic Environment JavaScript (Babel, Eslint, Jest and Watch)",
+  "main": "dist/common.js",
+  "author": "Eduardo Paixão (@duduindo)",
+  "license": "MIT",
+  "scripts": {
+    "server": "concurrently npm-watch \"http-server -p 3001\" ",
+    "build": "browserify ./src/js/app.js -t babelify --outfile ./dist/common.js",
+    "test": "jest --config jest.config.json",
+    "test:watch": "jest --config jest.config.json --watch",
+    "test:coverage": "jest --config jest.config.json --coverage",
+    "lint:eslint": "eslint src/js --cache --ignore-path .gitignore; exit 0;"
+  },
+  "keywords": [
+    "environment",
+    "javascript",
+    "basic"
+  ],
+  "watch": {
+    "build": {
+      "patterns": [
+        "./src/js/"
+      ],
+      "extensions": "js"
+    }
+  },
+  "devDependencies": {
+    "babel-cli": "*",
+    "babel-eslint": "*",
+    "babel-jest": "*",
+    "babel-preset-latest": "*",
+    "babelify": "*",
+    "browserify": "*",
+    "concurrently": "*",
+    "eslint": "*",
+    "html-loader-jest": "*",
+    "http-server": "*",
+    "jest": "*",
+    "npm-watch": "*"
+  }
+}
