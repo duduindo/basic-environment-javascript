@@ -6,38 +6,36 @@
   "author": "Eduardo Paixão (@duduindo)",
   "license": "MIT",
   "scripts": {
-    "server": "concurrently npm-watch \"http-server -p 3001\" ",
+    "server": "gulp watch",
     "build": "browserify ./src/js/app.js -t babelify --outfile ./dist/common.js",
     "test": "jest --config jest.config.json",
     "test:watch": "jest --config jest.config.json --watch",
     "test:coverage": "jest --config jest.config.json --coverage",
-    "lint:eslint": "eslint src/js --cache --ignore-path .gitignore; exit 0;"
+    "lint:eslint": "eslint src/js gulpfile.js --cache --ignore-path .gitignore; exit 0;",
+    "gulp:js": "gulp js"
   },
   "keywords": [
     "environment",
     "javascript",
     "basic"
   ],
-  "watch": {
-    "build": {
-      "patterns": [
-        "./src/js/"
-      ],
-      "extensions": "js"
-    }
-  },
   "devDependencies": {
     "babel-cli": "*",
     "babel-eslint": "*",
     "babel-jest": "*",
     "babel-preset-latest": "*",
     "babelify": "*",
-    "browserify": "*",
-    "concurrently": "*",
+    "browser-sync": "^2.24.4",
+    "browserify": "^16.2.2",
     "eslint": "*",
+    "gulp": "^3.9.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.0",
+    "gulplog": "^1.0.0",
     "html-loader-jest": "*",
     "http-server": "*",
     "jest": "*",
-    "npm-watch": "*"
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
   }
 }
