@@ -6,13 +6,13 @@
   "author": "Eduardo Paixão (@duduindo)",
   "license": "MIT",
   "scripts": {
-    "server": "gulp watch",
-    "build": "browserify ./src/js/app.js -t babelify --outfile ./dist/common.js",
+    "build": "gulp js",
+    "lint": "eslint src/js gulpfile.js --cache --ignore-path .gitignore; exit 0;",
+    "server": "gulp server",
     "test": "jest --config jest.config.json",
-    "test:watch": "jest --config jest.config.json --watch",
     "test:coverage": "jest --config jest.config.json --coverage",
-    "lint:eslint": "eslint src/js gulpfile.js --cache --ignore-path .gitignore; exit 0;",
-    "gulp:js": "gulp js"
+    "test:watch": "jest --config jest.config.json --watch",
+    "watch": "gulp watch"
   },
   "keywords": [
     "environment",
@@ -25,17 +25,17 @@
     "babel-jest": "*",
     "babel-preset-latest": "*",
     "babelify": "*",
-    "browser-sync": "^2.24.4",
-    "browserify": "^16.2.2",
+    "browser-sync": "*",
+    "browserify": "*",
     "eslint": "*",
-    "gulp": "^3.9.1",
-    "gulp-sourcemaps": "^2.6.4",
-    "gulp-uglify": "^3.0.0",
-    "gulplog": "^1.0.0",
+    "gulp": "*",
+    "gulp-color": "*",
+    "gulp-sourcemaps": "*",
+    "gulp-uglify": "*",
     "html-loader-jest": "*",
     "http-server": "*",
     "jest": "*",
-    "vinyl-buffer": "^1.0.1",
-    "vinyl-source-stream": "^2.0.0"
+    "vinyl-buffer": "*",
+    "vinyl-source-stream": "*"
   }
 }
