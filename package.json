@@ -1,43 +1,41 @@
 {
   "name": "basic-environment-javascript",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "description": "Basic Environment JavaScript (Babel, Eslint, Jest and Watch)",
   "main": "dist/common.js",
   "author": "Eduardo Paixão (@duduindo)",
   "license": "MIT",
   "scripts": {
-    "server": "concurrently npm-watch \"http-server -p 3001\" ",
-    "build": "browserify ./src/js/app.js -t babelify --outfile ./dist/common.js",
+    "build": "gulp js",
+    "lint": "eslint src/js gulpfile.js --cache --ignore-path .gitignore; exit 0;",
+    "server": "gulp server",
     "test": "jest --config jest.config.json",
-    "test:watch": "jest --config jest.config.json --watch",
     "test:coverage": "jest --config jest.config.json --coverage",
-    "lint:eslint": "eslint src/js --cache --ignore-path .gitignore; exit 0;"
+    "test:watch": "jest --config jest.config.json --watch",
+    "watch": "gulp watch"
   },
   "keywords": [
     "environment",
     "javascript",
     "basic"
   ],
-  "watch": {
-    "build": {
-      "patterns": [
-        "./src/js/"
-      ],
-      "extensions": "js"
-    }
-  },
   "devDependencies": {
     "babel-cli": "*",
     "babel-eslint": "*",
     "babel-jest": "*",
     "babel-preset-latest": "*",
     "babelify": "*",
+    "browser-sync": "*",
     "browserify": "*",
-    "concurrently": "*",
     "eslint": "*",
+    "gulp": "*",
+    "gulp-color": "*",
+    "gulp-sourcemaps": "*",
+    "gulp-uglify": "*",
     "html-loader-jest": "*",
     "http-server": "*",
     "jest": "*",
-    "npm-watch": "*"
+    "vinyl-buffer": "*",
+    "vinyl-source-stream": "*"
   }
 }
