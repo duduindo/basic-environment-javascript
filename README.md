@@ -12,6 +12,18 @@
   * `test:watch`
   * `watch`
 
+### Usage
+```bash
+# Install
+npm install
+
+# Run script
+npm run server
+
+# Open in browser
+# ==> http://localhost:3001
+```
+
 ### Folders
   * **./dist** Distribution
   * **./src** Sources
