@@ -1,6 +1,6 @@
 {
   "name": "basic-environment-javascript",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Basic Environment JavaScript (Babel, Eslint, Jest and Watch)",
   "main": "dist/common.js",
   "author": "Eduardo Paixão (@duduindo)",
