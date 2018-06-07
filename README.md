@@ -17,17 +17,3 @@
   * **./src** Sources
   * **./\_\_tests\_\_** Tests
   * **./\_\_mocks\_\_** Mocks
-  
-### Dev Dependencies
-  * babel-cli
-  * babel-eslint
-  * babel-jest
-  * babel-preset-latest
-  * babelify
-  * browserify
-  * concurrently
-  * eslint
-  * html-loader-jest
-  * http-server
-  * jest
-  * npm-watch
