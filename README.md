@@ -1,5 +1,5 @@
 # Basic Environment JavaScript
-## Babel, BrowserSync, Eslint, Gulp, Jest, Lint and Watch
+Babel, BrowserSync, Gulp, Jest, Lint and Watch
 
 ### NPM Scripts  
   * `build`
