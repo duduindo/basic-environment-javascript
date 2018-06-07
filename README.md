@@ -1,14 +1,16 @@
 # Basic Environment JavaScript
-## Babel, Eslint, Jest and Watch
+## Babel, BrowserSync, Eslint, Gulp, Jest, Lint and Watch
 
-### NPM Scripts
-  * `server` 
-    * Run server http://localhost:3001 + watch + `build`
-  * `build`  
+### NPM Scripts  
+  * `build`
+  * `lint`
+  * `server`
+    * Watch
+    * Run server http://localhost:3001
   * `test`
-  * `test:watch`
   * `test:coverage`
-  * `lint:eslint`
+  * `test:watch`
+  * `watch`
 
 ### Folders
   * **./dist** Distribution
