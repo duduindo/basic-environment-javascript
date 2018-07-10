@@ -33,7 +33,6 @@
     "gulp-sourcemaps": "*",
     "gulp-uglify": "*",
     "html-loader-jest": "*",
-    "http-server": "*",
     "jest": "*",
     "vinyl-buffer": "*",
     "vinyl-source-stream": "*"
