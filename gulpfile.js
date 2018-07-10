@@ -5,10 +5,9 @@ const source = require('vinyl-source-stream');
 const buffer = require('vinyl-buffer');
 const uglify = require('gulp-uglify');
 const sourcemaps = require('gulp-sourcemaps');
-const color = require('gulp-color');
 const babelify = require('babelify');
 const browserSync = require('browser-sync').create();
-
+const stylus = require('gulp-stylus');
 const babelrc = JSON.parse(fs.readFileSync('./.babelrc'));
 
 gulp.task('js', () => {
@@ -28,20 +27,23 @@ gulp.task('js', () => {
   return b;
 });
 
-gulp.task('watch', ['js'], () => {
-  gulp.watch('./src/js/**/*.js', ['js']);
-
-  gulp.watch(['./index.html', './dist/**/*.js']).on('change', e =>
-    console.info(color(`File: ${e.path}`, 'GREEN')));
+gulp.task('css', () => {
+  gulp.src('./src/stylus/app.styl')
+    .pipe(sourcemaps.init())
+    .pipe(stylus({
+      compress: true,
+    }))
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('./dist/css/'));
 });
 
-gulp.task('server', ['js'], () => {
+gulp.task('server', ['css', 'js'], () => {
   browserSync.init({
     port: 3001,
     server: "./",
     open: false
   });
 
-  gulp.watch('./src/js/**/*.js', ['js']);
+  gulp.watch(['./src/stylus/**/*.styl', './src/js/**/*.js'], ['css','js']);
   gulp.watch(['./index.html', './dist/**/*.js']).on('change', browserSync.reload);
 });
