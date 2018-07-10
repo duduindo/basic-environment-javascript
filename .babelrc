@@ -1,5 +1,9 @@
 {
   "presets": [
-    ["latest"]
+    ["env", {
+      "targets": {
+        "chrome": "68"
+      }
+    }]
   ]
 }
